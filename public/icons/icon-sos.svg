@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <rect width="96" height="96" rx="24" fill="#e11d48"/>
+  <circle cx="48" cy="48" r="32" fill="#be123c"/>
+  <text x="48" y="56" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle">SOS</text>
+</svg>

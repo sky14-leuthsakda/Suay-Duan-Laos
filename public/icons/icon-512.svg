@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+    <filter id="shadow512" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Background with round corners -->
+  <rect width="512" height="512" rx="112" fill="url(#bg512)"/>
+  
+  <!-- Outer Shield Badge -->
+  <path d="M256 72 L392 134 C392 268 338 370 256 428 C174 370 120 268 120 134 Z" 
+        fill="#ffffff" 
+        filter="url(#shadow512)"/>
+
+  <!-- Emergency Medical / Rescue Cross -->
+  <path d="M234 168 H278 V234 H344 V278 H278 V344 H234 V278 H168 V234 H234 Z" 
+        fill="#e11d48" 
+        rx="6"/>
+        
+  <!-- Center SOS Accent Circle -->
+  <circle cx="256" cy="256" r="16" fill="#ffffff"/>
+</svg>
