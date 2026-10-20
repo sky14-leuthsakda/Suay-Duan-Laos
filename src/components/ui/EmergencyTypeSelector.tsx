@@ -89,7 +89,7 @@ export const EmergencyTypeSelector: React.FC<EmergencyTypeSelectorProps> = ({
 
   return (
     <div className={`select-none ${className}`}>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
         {typesConfig.map((item) => {
           const isSelected = selectedType === item.type;
           return (
@@ -98,8 +98,7 @@ export const EmergencyTypeSelector: React.FC<EmergencyTypeSelectorProps> = ({
               type="button"
               onClick={() => handleSelect(item.type)}
               aria-pressed={isSelected}
-              style={{ minHeight: '64px' }}
-              className={`flex flex-col items-center justify-center gap-1.5 rounded-xl border transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 px-1 ${
+              className={`flex flex-col items-center justify-center gap-1 rounded-xl border transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 px-1 py-1.5 min-h-[50px] sm:min-h-[56px] ${
                 isSelected
                   ? `border-2 ${item.activeBorder} ${item.activeBg} ${item.activeText} font-bold shadow-sm`
                   : 'border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-750 font-medium'
@@ -108,7 +107,7 @@ export const EmergencyTypeSelector: React.FC<EmergencyTypeSelectorProps> = ({
               <span className={isSelected ? item.activeText : item.inactiveIcon}>
                 {item.icon}
               </span>
-              <span className="text-[13px] leading-tight text-center line-clamp-1 w-full px-0.5">
+              <span className="text-[12px] sm:text-[13px] leading-tight text-center line-clamp-1 w-full px-0.5">
                 {item.label}
               </span>
             </button>

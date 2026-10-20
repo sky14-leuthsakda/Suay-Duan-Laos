@@ -35,23 +35,23 @@ export const EmergencyCallRow: React.FC<EmergencyCallRowProps> = ({ className = 
   };
 
   return (
-    <div className={`grid grid-cols-3 gap-2 select-none ${className}`}>
+    <div className={`grid grid-cols-3 gap-1.5 sm:gap-2 select-none ${className}`}>
       {EMERGENCY_NUMBERS.map((contact) => (
         <a
           key={contact.id}
           href={`tel:${contact.number}`}
           aria-label={`Call ${contact.nameLo} ${contact.number}`}
-          className={`touch-target flex flex-col items-center justify-center p-2 rounded-2xl border text-center transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 shadow-sm ${getColors(
+          className={`flex flex-col items-center justify-center py-1.5 px-1.5 min-h-[46px] sm:min-h-[50px] rounded-xl border text-center transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 shadow-sm ${getColors(
             contact.id
           )}`}
         >
           <div className="flex items-center gap-1 mb-0.5">
             {getIcon(contact.icon)}
-            <span className="text-base font-black tracking-tight">
+            <span className="text-[14px] sm:text-[15px] font-black tracking-tight">
               {contact.number}
             </span>
           </div>
-          <span className="text-[13px] font-medium leading-none opacity-80 line-clamp-1">
+          <span className="text-[11px] sm:text-[12px] font-medium leading-none opacity-85 line-clamp-1">
             {language === 'lo' ? contact.nameLo : contact.nameEn}
           </span>
         </a>

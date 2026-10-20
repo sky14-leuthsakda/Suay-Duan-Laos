@@ -298,8 +298,14 @@ class WebSocketRealtimeClient implements RealtimeClient {
   private attempts = 0;
 
   connect(): void {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsUrl = `${protocol}//${window.location.host}/ws/realtime`;
+    let wsUrl: string;
+    if (import.meta.env.VITE_WS_URL) {
+      const base = String(import.meta.env.VITE_WS_URL).replace(/\/$/, '');
+      wsUrl = base.startsWith('ws') ? `${base}/ws/realtime` : `${base.replace(/^http/, 'ws')}/ws/realtime`;
+    } else {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      wsUrl = `${protocol}//${window.location.host}/ws/realtime`;
+    }
 
     try {
       this.setConnectionState('reconnecting');
@@ -410,6 +416,6 @@ class WebSocketRealtimeClient implements RealtimeClient {
   }
 }
 
-// Single env flag VITE_USE_MOCK=true|false switches mock vs real WebSocket client
-const isMock = import.meta.env.VITE_USE_MOCK !== 'false';
-export const realtime: RealtimeClient = isMock ? new MockRealtimeClient() : new WebSocketRealtimeClient();
+// Use WebSocket by default for live cross-device sync; mock fallback if requested
+const isExplicitMock = import.meta.env.VITE_USE_MOCK === 'true';
+export const realtime: RealtimeClient = isExplicitMock ? new MockRealtimeClient() : new WebSocketRealtimeClient();

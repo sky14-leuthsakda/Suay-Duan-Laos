@@ -1,0 +1,426 @@
+{
+  "incidents": [
+    {
+      "id": "inc-1792526658008",
+      "trackingCode": "SDL-2026-6062",
+      "type": "medical",
+      "status": "received",
+      "priority": "critical",
+      "location": {
+        "lat": 17.9712,
+        "lng": 102.6174,
+        "address": "Ban Mixay, Vientiane"
+      },
+      "note": "Test mobile fix",
+      "timeline": [
+        {
+          "id": "evt-1792526658008",
+          "incidentId": "inc-1792526658008",
+          "status": "received",
+          "timestamp": "2026-10-20T20:04:18.008Z",
+          "note": "ແຈ້ງເຫດສຸກເສີນຖືກສົ່ງເຂົ້າສູ່ລະບົບ (Incident received)"
+        }
+      ],
+      "createdAt": "2026-10-20T20:04:18.008Z",
+      "updatedAt": "2026-10-20T20:04:18.008Z"
+    },
+    {
+      "id": "inc-001",
+      "trackingCode": "SDL-2026-8921",
+      "type": "fire",
+      "status": "dispatched",
+      "priority": "critical",
+      "location": {
+        "lat": 17.962,
+        "lng": 102.613,
+        "address": "ໄຟໄໝ້ຮ້ານຄ້າໃກ້ຕະຫຼາດເຊົ້າ, ຖະໜົນໜອງບອນ, ເມືອງໄຊເສດຖາ",
+        "province": "Vientiane Capital",
+        "district": "Xaysettha",
+        "village": "Nongbone"
+      },
+      "note": "ຄວັນໄຟດຳໜາແໜ້ນ, ຕ້ອງການລົດນ້ຳດັບເພີງດ່ວນ",
+      "reporterPhone": "020-54321987",
+      "reporterName": "ທ້າວ ບຸນມີ",
+      "assignedUnitId": "unit-fire-01",
+      "assignedUnit": {
+        "id": "unit-fire-01",
+        "name": "ໜ່ວຍດັບເພີງ ຈັນທະບູລີ 04 (Fire Engine 04)",
+        "type": "fire_truck",
+        "status": "busy",
+        "assignedIncidentId": "inc-001",
+        "location": {
+          "lat": 17.962,
+          "lng": 102.613,
+          "address": "ຖະໜົນໜອງບອນ, ເມືອງໄຊເສດຖາ, ນະຄອນຫຼວງວຽງຈັນ",
+          "province": "Vientiane Capital",
+          "district": "Xaysettha"
+        },
+        "contactNumber": "020-22233344",
+        "plateNumber": "ຄຄ-8821 ວຽງຈັນ",
+        "etaMinutes": 3,
+        "updatedAt": "2026-10-20T20:00:54.081Z"
+      },
+      "createdAt": "2026-10-20T19:53:54.081Z",
+      "updatedAt": "2026-10-20T20:00:54.081Z",
+      "timeline": [
+        {
+          "id": "evt-101",
+          "incidentId": "inc-001",
+          "status": "received",
+          "timestamp": "2026-10-20T19:53:54.081Z",
+          "note": "ລະບົບໄດ້ຮັບການແຈ້ງເຫດສຸກເສີນ SOS ຈາກປະຊາຊົນ"
+        },
+        {
+          "id": "evt-102",
+          "incidentId": "inc-001",
+          "status": "acknowledged",
+          "timestamp": "2026-10-20T19:55:54.081Z",
+          "note": "ເຈົ້າໜ້າທີ່ສູນສັ່ງການຮັບຊາບ ແລະ ກວດສອບພິກັດ",
+          "actorName": "Operator 03"
+        },
+        {
+          "id": "evt-103",
+          "incidentId": "inc-001",
+          "status": "dispatched",
+          "timestamp": "2026-10-20T20:00:54.081Z",
+          "note": "ສັ່ງການໜ່ວຍດັບເພີງ ຈັນທະບູລີ 04 ອອກປະຕິບັດໜ້າທີ່",
+          "actorName": "Dispatcher Somchai"
+        }
+      ]
+    },
+    {
+      "id": "inc-002",
+      "trackingCode": "SDL-2026-8920",
+      "type": "accident",
+      "status": "on_the_way",
+      "priority": "high",
+      "location": {
+        "lat": 17.954,
+        "lng": 102.628,
+        "address": "ສີ່ແຍກດົງປ່າລານ, ເມືອງສີສັດຕະນາກ, ນະຄອນຫຼວງວຽງຈັນ",
+        "province": "Vientiane Capital",
+        "district": "Sisattanak",
+        "village": "Dongpalan"
+      },
+      "note": "ລົດຈັກຕຳກັນ 2 ຄັນ, ມີຜູ້ບາດເຈັບມີບາດແຜຕາມຮ່າງກາຍ",
+      "reporterPhone": "020-99887766",
+      "reporterName": "ນາງ ແກ້ວມະນີ",
+      "assignedUnitId": "unit-amb-02",
+      "assignedUnit": {
+        "id": "unit-amb-02",
+        "name": "ກູ້ໄພ ນະຄອນຫຼວງ 02 (Rescue Amb 02)",
+        "type": "ambulance",
+        "status": "busy",
+        "assignedIncidentId": "inc-002",
+        "location": {
+          "lat": 17.954,
+          "lng": 102.628,
+          "address": "ບ້ານດົງປ່າລານ, ເມືອງສີສັດຕະນາກ, ນະຄອນຫຼວງວຽງຈັນ",
+          "province": "Vientiane Capital",
+          "district": "Sisattanak"
+        },
+        "contactNumber": "020-55567890",
+        "plateNumber": "ຂຂ-3312 ວຽງຈັນ",
+        "etaMinutes": 2,
+        "updatedAt": "2026-10-20T20:01:54.081Z"
+      },
+      "createdAt": "2026-10-20T19:48:54.081Z",
+      "updatedAt": "2026-10-20T19:58:54.081Z",
+      "timeline": [
+        {
+          "id": "evt-201",
+          "incidentId": "inc-002",
+          "status": "received",
+          "timestamp": "2026-10-20T19:48:54.082Z",
+          "note": "ໄດ້ຮັບແຈ້ງເຫດອຸບັດຕິເຫດຈະລາຈອນ"
+        },
+        {
+          "id": "evt-202",
+          "incidentId": "inc-002",
+          "status": "acknowledged",
+          "timestamp": "2026-10-20T19:51:54.082Z",
+          "note": "ເຈົ້າໜ້າທີ່ຮັບຊາບ ແລະ ຕິດຕໍ່ກັບຜູ້ແຈ້ງ"
+        },
+        {
+          "id": "evt-203",
+          "incidentId": "inc-002",
+          "status": "dispatched",
+          "timestamp": "2026-10-20T19:55:54.082Z",
+          "note": "ມອບໝາຍໜ່ວຍກູ້ໄພ ນະຄອນຫຼວງ 02"
+        },
+        {
+          "id": "evt-204",
+          "incidentId": "inc-002",
+          "status": "on_the_way",
+          "timestamp": "2026-10-20T19:58:54.082Z",
+          "note": "ລົດກູ້ໄພກຳລັງເດີນທາງ ເຖິງໃນອີກ 2 ນາທີ"
+        }
+      ]
+    },
+    {
+      "id": "inc-003",
+      "trackingCode": "SDL-2026-8915",
+      "type": "medical",
+      "status": "arrived",
+      "priority": "critical",
+      "location": {
+        "lat": 19.89,
+        "lng": 102.135,
+        "address": "ໃກ້ຕະຫຼາດດາລາ, ນະຄອນຫຼວງພະບາງ, ແຂວງຫຼວງພະບາງ",
+        "province": "Luang Prabang",
+        "district": "Luang Prabang City"
+      },
+      "note": "ຄົນເຈັບຫາຍໃຈຍາກ, ຕ້ອງການຖັງອົກຊີແຊນດ່ວນ",
+      "reporterPhone": "020-22334455",
+      "reporterName": "ທ້າວ ຄຳຫຼ້າ",
+      "createdAt": "2026-10-20T19:33:54.082Z",
+      "updatedAt": "2026-10-20T20:01:54.082Z",
+      "timeline": [
+        {
+          "id": "evt-301",
+          "incidentId": "inc-003",
+          "status": "received",
+          "timestamp": "2026-10-20T19:33:54.082Z"
+        },
+        {
+          "id": "evt-302",
+          "incidentId": "inc-003",
+          "status": "acknowledged",
+          "timestamp": "2026-10-20T19:38:54.082Z"
+        },
+        {
+          "id": "evt-303",
+          "incidentId": "inc-003",
+          "status": "dispatched",
+          "timestamp": "2026-10-20T19:43:54.082Z"
+        },
+        {
+          "id": "evt-304",
+          "incidentId": "inc-003",
+          "status": "on_the_way",
+          "timestamp": "2026-10-20T19:48:54.082Z"
+        },
+        {
+          "id": "evt-305",
+          "incidentId": "inc-003",
+          "status": "arrived",
+          "timestamp": "2026-10-20T20:01:54.082Z",
+          "note": "ທີມແພດຮອດຈຸດເກີດເຫດ ແລະ ກຳລັງປະຖົມພະຍາບານ"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "unit-amb-01",
+      "name": "ໜ່ວຍກູ້ໄພ 1623 ວຽງຈັນ (Ambulance 01)",
+      "type": "ambulance",
+      "status": "available",
+      "location": {
+        "lat": 17.9685,
+        "lng": 102.6135,
+        "address": "ຖະໜົນລ້ານຊ້າງ, ເມືອງຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ",
+        "province": "Vientiane Capital",
+        "district": "Chanthabouly"
+      },
+      "contactNumber": "020-55512345",
+      "plateNumber": "ກກ-9142 ວຽງຈັນ",
+      "etaMinutes": 4,
+      "updatedAt": "2026-10-20T20:02:54.081Z"
+    },
+    {
+      "id": "unit-amb-02",
+      "name": "ກູ້ໄພ ນະຄອນຫຼວງ 02 (Rescue Amb 02)",
+      "type": "ambulance",
+      "status": "busy",
+      "assignedIncidentId": "inc-002",
+      "location": {
+        "lat": 17.954,
+        "lng": 102.628,
+        "address": "ບ້ານດົງປ່າລານ, ເມືອງສີສັດຕະນາກ, ນະຄອນຫຼວງວຽງຈັນ",
+        "province": "Vientiane Capital",
+        "district": "Sisattanak"
+      },
+      "contactNumber": "020-55567890",
+      "plateNumber": "ຂຂ-3312 ວຽງຈັນ",
+      "etaMinutes": 2,
+      "updatedAt": "2026-10-20T20:01:54.081Z"
+    },
+    {
+      "id": "unit-fire-01",
+      "name": "ໜ່ວຍດັບເພີງ ຈັນທະບູລີ 04 (Fire Engine 04)",
+      "type": "fire_truck",
+      "status": "busy",
+      "assignedIncidentId": "inc-001",
+      "location": {
+        "lat": 17.962,
+        "lng": 102.613,
+        "address": "ຖະໜົນໜອງບອນ, ເມືອງໄຊເສດຖາ, ນະຄອນຫຼວງວຽງຈັນ",
+        "province": "Vientiane Capital",
+        "district": "Xaysettha"
+      },
+      "contactNumber": "020-22233344",
+      "plateNumber": "ຄຄ-8821 ວຽງຈັນ",
+      "etaMinutes": 3,
+      "updatedAt": "2026-10-20T20:00:54.081Z"
+    },
+    {
+      "id": "unit-fire-02",
+      "name": "ໜ່ວຍດັບເພີງ ສີໂຄດຕະບອງ (Fire Engine 02)",
+      "type": "fire_truck",
+      "status": "available",
+      "location": {
+        "lat": 17.982,
+        "lng": 102.591,
+        "address": "ບ້ານສີໄຄ, ເມືອງສີໂຄດຕະບອງ, ນະຄອນຫຼວງວຽງຈັນ",
+        "province": "Vientiane Capital",
+        "district": "Sikhottabong"
+      },
+      "contactNumber": "020-99988877",
+      "plateNumber": "ຄຄ-4411 ວຽງຈັນ",
+      "etaMinutes": 6,
+      "updatedAt": "2026-10-20T19:58:54.081Z"
+    },
+    {
+      "id": "unit-pol-01",
+      "name": "ໜ່ວຍສາຍກວດ 191 ດົງໂດກ (Police Patrol 01)",
+      "type": "police",
+      "status": "available",
+      "location": {
+        "lat": 18.028,
+        "lng": 102.641,
+        "address": "ມະຫາວິທະຍາໄລແຫ່ງຊາດ, ເມືອງໄຊທານີ, ນະຄອນຫຼວງວຽງຈັນ",
+        "province": "Vientiane Capital",
+        "district": "Xaythany"
+      },
+      "contactNumber": "020-77711122",
+      "plateNumber": "ຕຕ-1911 ວຽງຈັນ",
+      "etaMinutes": 5,
+      "updatedAt": "2026-10-20T19:59:54.081Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1792526658008-314",
+      "timestamp": "2026-10-20T20:04:18.008Z",
+      "actorId": "citizen",
+      "actorName": "ພົນລະເມືອງ (Citizen)",
+      "actorRole": "citizen",
+      "action": "INCIDENT_CREATED",
+      "entityType": "incident",
+      "entityId": "inc-1792526658008",
+      "details": "ສ້າງເຫດສຸກເສີນໃໝ່ SDL-2026-6062 ປະເພດ medical",
+      "newValue": "received"
+    },
+    {
+      "id": "log-001",
+      "timestamp": "2026-10-20T20:01:54.082Z",
+      "actorId": "user-op-01",
+      "actorName": "ສ.ພ. ສົມພອນ ວິໄລສັກ (Dispatcher 01)",
+      "actorRole": "dispatcher",
+      "action": "STATUS_CHANGED",
+      "entityType": "incident",
+      "entityId": "inc-003",
+      "details": "ປ່ຽນສະຖານະເຫດການເປັນ \"ຮອດຈຸດເກີດເຫດ (Arrived)\"",
+      "previousValue": "on_the_way",
+      "newValue": "arrived",
+      "ipAddress": "192.168.1.101"
+    },
+    {
+      "id": "log-002",
+      "timestamp": "2026-10-20T19:58:54.082Z",
+      "actorId": "user-op-02",
+      "actorName": "ບຸນມີ ແກ້ວມະນີ (Operator 02)",
+      "actorRole": "dispatcher",
+      "action": "UNIT_ASSIGNED",
+      "entityType": "incident",
+      "entityId": "inc-001",
+      "details": "ມອບໝາຍ ໜ່ວຍດັບເພີງ ຈັນທະບູລີ 04 ເຂົ້າລະງັບເຫດໄຟໄໝ້",
+      "previousValue": "none",
+      "newValue": "unit-fire-01",
+      "ipAddress": "192.168.1.105"
+    },
+    {
+      "id": "log-003",
+      "timestamp": "2026-10-20T19:55:54.082Z",
+      "actorId": "user-admin-01",
+      "actorName": "ທ້າວ ອານຸສອນ ວົງສາ (Admin)",
+      "actorRole": "admin",
+      "action": "PRIORITY_UPDATED",
+      "entityType": "incident",
+      "entityId": "inc-001",
+      "details": "ຍົກລະດັບຄວາມຮີບດ່ວນເຫດການຈາກ High ເປັນ Critical",
+      "previousValue": "high",
+      "newValue": "critical",
+      "ipAddress": "192.168.1.200"
+    },
+    {
+      "id": "log-004",
+      "timestamp": "2026-10-20T19:51:54.082Z",
+      "actorId": "user-op-01",
+      "actorName": "ສ.ພ. ສົມພອນ ວິໄລສັກ (Dispatcher 01)",
+      "actorRole": "dispatcher",
+      "action": "NOTE_ADDED",
+      "entityType": "incident",
+      "entityId": "inc-002",
+      "details": "ເພີ່ມບັນທຶກພາຍໃນ: ຜູ້ແຈ້ງເຫດແຈ້ງວ່າມີຜູ້ບາດເຈັບ 2 ຄົນ ຕ້ອງການລົດສຸກເສີນດ່ວນ",
+      "newValue": "Internal note added",
+      "ipAddress": "192.168.1.101"
+    },
+    {
+      "id": "log-005",
+      "timestamp": "2026-10-20T19:48:54.082Z",
+      "actorId": "user-op-02",
+      "actorName": "ບຸນມີ ແກ້ວມະນີ (Operator 02)",
+      "actorRole": "dispatcher",
+      "action": "STATUS_CHANGED",
+      "entityType": "incident",
+      "entityId": "inc-002",
+      "details": "ປ່ຽນສະຖານະເຫດການເປັນ \"ກຳລັງເດີນທາງ (On the way)\"",
+      "previousValue": "dispatched",
+      "newValue": "on_the_way",
+      "ipAddress": "192.168.1.105"
+    },
+    {
+      "id": "log-006",
+      "timestamp": "2026-10-20T19:38:54.082Z",
+      "actorId": "user-op-03",
+      "actorName": "ຄຳຫຼ້າ ພົມມະຈັນ (Dispatcher 03)",
+      "actorRole": "dispatcher",
+      "action": "STATUS_CHANGED",
+      "entityType": "incident",
+      "entityId": "inc-004",
+      "details": "ປ່ຽນສະຖານະເຫດການເປັນ \"ແກ້ໄຂສຳເລັດ (Resolved)\"",
+      "previousValue": "arrived",
+      "newValue": "resolved",
+      "ipAddress": "192.168.1.108"
+    },
+    {
+      "id": "log-007",
+      "timestamp": "2026-10-20T19:33:54.082Z",
+      "actorId": "user-admin-01",
+      "actorName": "ທ້າວ ອານຸສອນ ວົງສາ (Admin)",
+      "actorRole": "admin",
+      "action": "UNIT_STATUS_CHANGED",
+      "entityType": "unit",
+      "entityId": "unit-fire-02",
+      "details": "ປ່ຽນສະຖານະໜ່ວຍດັບເພີງ ສີໂຄດຕະບອງ ເປັນ \"ພ້ອມປະຕິບັດງານ (Available)\"",
+      "previousValue": "busy",
+      "newValue": "available",
+      "ipAddress": "192.168.1.200"
+    },
+    {
+      "id": "log-008",
+      "timestamp": "2026-10-20T19:18:54.082Z",
+      "actorId": "system",
+      "actorName": "ລະບົບອັດຕະໂນມັດ (System Auto)",
+      "actorRole": "admin",
+      "action": "INCIDENT_CREATED",
+      "entityType": "incident",
+      "entityId": "inc-001",
+      "details": "ສ້າງເຫດສຸກເສີນ SOS ໄຟໄໝ້ (Fire) ຈາກພົນລະເມືອງ",
+      "newValue": "received",
+      "ipAddress": "203.144.144.1"
+    }
+  ]
+}

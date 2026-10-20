@@ -220,17 +220,17 @@ export const CitizenHome: React.FC = () => {
      *
      * NO justify-between — the flex-1 SOS zone absorbs all spare space.
      */
-    <div className="citizen-content flex flex-col overflow-hidden">
+    <div className="citizen-content flex flex-col justify-between">
 
       {/* ── SOS zone — grows to fill all remaining space ── */}
-      <div className="flex-1 min-h-0 flex flex-col items-center justify-center px-4 py-2">
+      <div className="flex-1 min-h-0 flex flex-col items-center justify-center px-4 py-1.5 my-auto">
         <SOSButton
           onPress={handleSOSPress}
           selectedTypeLabel={typeLabel}
         />
 
-        {/* Location line — single line, 16px margin from button container */}
-        <div className="mt-4 h-8 flex items-center justify-center w-full px-2">
+        {/* Location line — single line, 10px margin from button container */}
+        <div className="mt-2.5 min-h-[28px] flex items-center justify-center w-full px-2">
           <LocationLine
             status={locationStatus}
             onPickManually={() => setShowManualPicker(true)}
@@ -239,10 +239,10 @@ export const CitizenHome: React.FC = () => {
         </div>
       </div>
 
-      {/* ── Bottom zone — fixed height, no gaps between groups ── */}
-      <div className="shrink-0 flex flex-col gap-3 px-4 pb-3">
+      {/* ── Bottom zone — fixed height, compact spacing ── */}
+      <div className="shrink-0 flex flex-col gap-2 px-4 pb-2 pt-0.5">
         {/* Section label */}
-        <p className="text-[13px] font-bold text-slate-600 dark:text-slate-300 text-center leading-none">
+        <p className="text-[12px] sm:text-[13px] font-bold text-slate-600 dark:text-slate-300 text-center leading-none">
           {t('sos.quickTypeSelect')}
         </p>
 

@@ -518,7 +518,9 @@ class MockApiService implements ApiService {
 // Real HTTP REST Client (Production)
 // ==========================================
 class HttpApiService implements ApiService {
-  private baseUrl = '/api/v1';
+  private baseUrl = import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api/v1`
+    : '/api/v1';
 
   async createIncident(input: CreateIncidentInput): Promise<Incident> {
     const res = await fetch(`${this.baseUrl}/incidents`, {
@@ -633,6 +635,119 @@ class HttpApiService implements ApiService {
   }
 }
 
-// Single env flag VITE_USE_MOCK=true|false switches mock vs real API
-const isMock = import.meta.env.VITE_USE_MOCK !== 'false';
-export const api: ApiService = isMock ? new MockApiService() : new HttpApiService();
+class ResilientApiService implements ApiService {
+  private http = new HttpApiService();
+  private mock = new MockApiService();
+  private preferMock = import.meta.env.VITE_USE_MOCK === 'true';
+
+  async createIncident(input: CreateIncidentInput): Promise<Incident> {
+    if (this.preferMock) return this.mock.createIncident(input);
+    try {
+      return await this.http.createIncident(input);
+    } catch (err) {
+      console.warn('[API] Real server unreachable, falling back to local offline storage:', err);
+      return this.mock.createIncident(input);
+    }
+  }
+
+  async getIncident(id: string): Promise<Incident> {
+    if (this.preferMock) return this.mock.getIncident(id);
+    try {
+      return await this.http.getIncident(id);
+    } catch {
+      return this.mock.getIncident(id);
+    }
+  }
+
+  async getIncidents(params?: FilterIncidentsParams): Promise<Incident[]> {
+    if (this.preferMock) return this.mock.getIncidents(params);
+    try {
+      return await this.http.getIncidents(params);
+    } catch {
+      return this.mock.getIncidents(params);
+    }
+  }
+
+  async updateIncidentStatus(id: string, status: IncidentStatus, note?: string): Promise<Incident> {
+    if (this.preferMock) return this.mock.updateIncidentStatus(id, status, note);
+    try {
+      return await this.http.updateIncidentStatus(id, status, note);
+    } catch {
+      return this.mock.updateIncidentStatus(id, status, note);
+    }
+  }
+
+  async updateIncidentPriority(id: string, priority: IncidentPriority): Promise<Incident> {
+    if (this.preferMock) return this.mock.updateIncidentPriority(id, priority);
+    try {
+      return await this.http.updateIncidentPriority(id, priority);
+    } catch {
+      return this.mock.updateIncidentPriority(id, priority);
+    }
+  }
+
+  async addIncidentInternalNote(id: string, note: string, authorName?: string): Promise<Incident> {
+    if (this.preferMock) return this.mock.addIncidentInternalNote(id, note, authorName);
+    try {
+      return await this.http.addIncidentInternalNote(id, note, authorName);
+    } catch {
+      return this.mock.addIncidentInternalNote(id, note, authorName);
+    }
+  }
+
+  async assignUnit(incidentId: string, unitId: string): Promise<Incident> {
+    if (this.preferMock) return this.mock.assignUnit(incidentId, unitId);
+    try {
+      return await this.http.assignUnit(incidentId, unitId);
+    } catch {
+      return this.mock.assignUnit(incidentId, unitId);
+    }
+  }
+
+  async getUnits(): Promise<Unit[]> {
+    if (this.preferMock) return this.mock.getUnits();
+    try {
+      return await this.http.getUnits();
+    } catch {
+      return this.mock.getUnits();
+    }
+  }
+
+  async updateUnitLocation(unitId: string, location: LocationCoords): Promise<Unit> {
+    if (this.preferMock) return this.mock.updateUnitLocation(unitId, location);
+    try {
+      return await this.http.updateUnitLocation(unitId, location);
+    } catch {
+      return this.mock.updateUnitLocation(unitId, location);
+    }
+  }
+
+  async updateUnitStatus(unitId: string, status: UnitStatus): Promise<Unit> {
+    if (this.preferMock) return this.mock.updateUnitStatus(unitId, status);
+    try {
+      return await this.http.updateUnitStatus(unitId, status);
+    } catch {
+      return this.mock.updateUnitStatus(unitId, status);
+    }
+  }
+
+  async getAuditLogs(params?: FilterAuditLogParams): Promise<AuditLogEntry[]> {
+    if (this.preferMock) return this.mock.getAuditLogs(params);
+    try {
+      return await this.http.getAuditLogs(params);
+    } catch {
+      return this.mock.getAuditLogs(params);
+    }
+  }
+
+  async getIncidentStats(): Promise<IncidentStats> {
+    if (this.preferMock) return this.mock.getIncidentStats();
+    try {
+      return await this.http.getIncidentStats();
+    } catch {
+      return this.mock.getIncidentStats();
+    }
+  }
+}
+
+export const api: ApiService = new ResilientApiService();

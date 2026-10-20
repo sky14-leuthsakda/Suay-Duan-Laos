@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import { IncidentStatus } from '../../types';
 import { useTranslation } from '../../i18n';
 import { useIncidentStore } from '../../stores/incidentStore';
-import { EmergencyTypeBadge } from '../../components';
+import { EmergencyTypeBadge, CitizenLiveMap } from '../../components';
 import {
   Phone,
-  MapPin,
   Clock,
   Truck,
   CheckCircle2,
   AlertTriangle,
   X,
   Share2,
-  ChevronRight,
 } from 'lucide-react';
 import { triggerHaptic } from '../../utils/haptics';
 
@@ -216,30 +214,12 @@ export const CitizenStatusTracker: React.FC = () => {
       </div>
 
       {/* ── 2. Live map (flex-1) ── */}
-      <div className="flex-1 min-h-0 relative bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
-        {/* Map placeholder — actual map rendered by existing map logic */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-slate-400">
-            <MapPin className="w-8 h-8 mx-auto mb-1" />
-            <span className="text-[12px]">{t('tracker.liveMap')}</span>
-          </div>
-        </div>
-        {/* Unit moving indicator */}
-        {activeIncident.assignedUnit && (
-          <div className="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 px-2.5 py-1 rounded-xl text-[12px] font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" aria-hidden="true" />
-            <span>ລາຍງານສົດ</span>
-          </div>
-        )}
-        {/* Details link */}
-        <button
-          type="button"
-          onClick={() => setShowDetails(true)}
-          className="absolute bottom-2 right-2 bg-white/90 dark:bg-slate-900/90 px-2.5 py-1 rounded-xl text-[12px] font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1 shadow-sm hover:bg-white dark:hover:bg-slate-900 transition-colors"
-        >
-          <span>{t('tracker.detailsLink')}</span>
-          <ChevronRight className="w-3.5 h-3.5" />
-        </button>
+      <div className="flex-1 min-h-[180px] relative flex flex-col overflow-hidden">
+        <CitizenLiveMap
+          incident={activeIncident}
+          assignedUnit={activeIncident.assignedUnit}
+          onShowDetails={() => setShowDetails(true)}
+        />
       </div>
 
       {/* ── 3. Horizontal stepper ── */}

@@ -324,7 +324,7 @@ export const CitizenLayout: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen min-h-dvh bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
+    <div className="h-screen h-dvh w-full bg-slate-100 dark:bg-slate-950 flex items-center justify-center overflow-hidden">
       {/* Max-width card container */}
       <div className="citizen-shell w-full max-w-md bg-white dark:bg-slate-900 relative overflow-hidden sm:shadow-2xl sm:rounded-none">
 

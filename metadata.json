@@ -1,0 +1,7 @@
+{
+  "name": "Suay Duan Lao",
+  "description": "Suay Duan Lao (ຊ່ວຍດ່ວນ ລາວ) - ລະບົບແຈ້ງເຫດສຸກເສີນຕະຫຼອດ 24 ຊົ່ວໂມງ Emergency dispatch and reporting system for Laos",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

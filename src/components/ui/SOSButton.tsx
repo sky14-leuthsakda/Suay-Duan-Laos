@@ -20,7 +20,7 @@ export interface SOSButtonProps {
  *   Ring-2:    84% of container  (middle slower ping)
  *   Ring-3:    75% of container  (inner pulse glow)
  */
-const CONTAINER = 'clamp(300px, 82vw, 380px)';
+const CONTAINER = 'clamp(175px, min(50vw, 28vh), 235px)';
 
 export const SOSButton: React.FC<SOSButtonProps> = ({
   onPress,
@@ -78,13 +78,13 @@ export const SOSButton: React.FC<SOSButtonProps> = ({
       >
         <span
           className="font-black tracking-wider text-white drop-shadow-md leading-none"
-          style={{ fontSize: 'clamp(32px, 10vw, 48px)' }}
+          style={{ fontSize: 'clamp(26px, 7.5vw, 38px)' }}
         >
           SOS
         </span>
         <span
           className="font-semibold text-rose-100/90 mt-1 text-center px-2 leading-tight"
-          style={{ fontSize: 'clamp(12px, 3vw, 14px)' }}
+          style={{ fontSize: 'clamp(11px, 2.8vw, 13px)' }}
         >
           {selectedTypeLabel ?? 'ກົດແຈ້ງດ່ວນ'}
         </span>
